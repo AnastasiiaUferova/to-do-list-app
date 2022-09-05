@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Monda Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('Monda-Regular.woff') format('woff'), url("Monda-Regular.ttf") format("ttf");
+    }
