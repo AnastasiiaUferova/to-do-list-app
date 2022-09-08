@@ -1,0 +1,20 @@
+.td-page__title {
+    font-size: 96px;
+    color:#FFFFFF;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    line-height: 156px;
+    margin-left: 59px;
+    padding-top: 13px;
+}
+
+@media (max-width: 500px) {
+    .td-page__title  {
+        font-size: 40px;
+        line-height: 65px;
+        letter-spacing: 0.1em;
+        margin-left: 21px;
+        padding-top: 9px;
+    }
+
+}
