@@ -1,0 +1,56 @@
+.task {
+    height: 82.49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25273C;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.task__text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.task__text {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 41px;
+    letter-spacing: 0.1em;
+    color: rgba(249, 254, 255, 0.7);
+    margin-left: 20px;
+}
+
+.task__button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.task__button {
+    width: 42px;
+    height: 41px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.task__button:hover {
+    opacity: 0.5;
+}
+
+
+.task__button:nth-of-type(1) {
+    background-image: url(../../images/EmptyFlag-min.svg);
+}
+
+.task__button:nth-of-type(2) {
+    background-image: url(../../images/EditTask-min.svg);
+}
+
+.task__button:nth-of-type(3) {
+    background-image: url(../../images/Delete\ Task-min.svg);
+}
