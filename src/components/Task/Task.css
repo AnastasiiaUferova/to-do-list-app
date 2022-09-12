@@ -12,6 +12,7 @@
 .task__text-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -53,4 +54,40 @@
 
 .task__button:nth-of-type(3) {
     background-image: url(../../images/Delete\ Task-min.svg);
+}
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 48px;
+    height: 44px;
+    border: 0.15em solid #BF56FF;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 48px;
+    height: 44px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background:  linear-gradient(111.35deg, #E600FA 10.12%, rgba(82, 97, 234, 0) 82.22%);
+    border-radius: 50%;
+    border: none;
+    background-image: url(../../images/Check\ True-min.svg);
+}
+
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:hover {
+    opacity: 0.7;
 }
