@@ -12,7 +12,7 @@ function ToDoPage() {
 
     const Resize = useCallback(
         (width) => {
-            if (width > 488) {
+            if (width > 500) {
                 setInputVisible(true)
             }
             else setInputVisible(false)
