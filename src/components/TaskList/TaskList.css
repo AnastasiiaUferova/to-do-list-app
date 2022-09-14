@@ -6,12 +6,17 @@
     align-self: center;
     width: 93vw;
     margin:auto;
+    margin-top: 95px;
 }
-
-
 
 @media (max-width: 1070px) {
     .task-list  {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .task-list  {
+        margin-top: 40px;
     }
 }

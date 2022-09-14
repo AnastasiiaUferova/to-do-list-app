@@ -91,3 +91,37 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]:hover {
     opacity: 0.7;
 }
+
+
+@media (max-width: 500px) {
+    .task {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 60px;
+    }
+    .task__text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.1em;
+        color: rgba(249, 254, 255, 0.7);
+        margin-left: 20px;
+}
+
+    input[type="checkbox"] {
+        width: 30px;
+        height: 28px;
+}
+
+    input[type="checkbox"]::before {
+        width: 30px;
+        height: 28px;
+        background-size: contain;
+}
+
+    .task__button {
+        width: 22px;
+        height: 21px;
+        background-size: contain;
+    }
+}

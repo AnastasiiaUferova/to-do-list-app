@@ -42,6 +42,11 @@ function ToDoPage() {
                 <h1 className="td-page__title">TODO</h1>
                 {isInputVisible && <TaskInput /> }
                 <TaskList />
+                
+                <div className="td-page__button-container">
+                <button className="td-page__button_clear">Clear All</button>
+                {!isInputVisible && <button className="td-page__button_add"></button>}
+                </div> 
             </div>
         </div>
     );

@@ -5,3 +5,6 @@ p, h1, h2 {
     margin-inline-end: 0px;
 }
 
+.App {
+    background-color: #181824;
+}
