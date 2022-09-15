@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState} from "react";
 import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
+import ImportnantList from "../ImportantList/ImportantList"
 
 
 function ToDoPage() {
@@ -42,6 +43,7 @@ function ToDoPage() {
                 <h1 className="td-page__title">TODO</h1>
                 {isInputVisible && <TaskInput /> }
                 <TaskList />
+                <ImportnantList />
                 
                 <div className="td-page__button-container">
                 <button className="td-page__button_clear">Clear All</button>
