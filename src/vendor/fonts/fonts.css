@@ -4,3 +4,11 @@
     font-weight: normal;
     src: url('Monda-Regular.woff') format('woff'), url("Monda-Regular.ttf") format("ttf");
     }
+
+@font-face {
+    font-family: 'Monda';
+    font-style: normal;
+    font-weight: 700;
+    src: url('Monda-Bald.woff2') format('woff2'),
+        url('Monda-Bald.woff') format('woff'), 
+}
