@@ -8,4 +8,4 @@ export default function AddForm() {
             <button className="popup__button popup__edit-button"></button>
         </Form>
     );
-}
+};
