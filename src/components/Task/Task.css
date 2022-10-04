@@ -92,6 +92,13 @@ input[type="checkbox"]:hover {
     opacity: 0.7;
 }
 
+.task-form__selection {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
 
 @media (max-width: 500px) {
     .task {
@@ -101,8 +108,8 @@ input[type="checkbox"]:hover {
     }
     .task__text {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 30px;
+        font-size: 15px;
+        line-height: 20px;
         letter-spacing: 0.1em;
         color: rgba(249, 254, 255, 0.7);
         margin-left: 20px;
@@ -123,5 +130,9 @@ input[type="checkbox"]:hover {
         width: 22px;
         height: 21px;
         background-size: contain;
+    }
+
+    .task-form__selection {
+        font-size: 15px;
     }
 }

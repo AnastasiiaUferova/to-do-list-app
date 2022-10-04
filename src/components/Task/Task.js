@@ -14,6 +14,12 @@ function Task() {
                 <button className="task__button" type="submit"></button>
                 <button className="task__button" type="submit"></button>
                 <button className="task__button" type="submit"></button>
+            <form name="selection"></form>
+                <select className="task-form__selection">
+	                <option>1p</option>
+	                <option>2p</option>
+	                <option>3p</option>
+                </select>
             </div>
         </div>
     );

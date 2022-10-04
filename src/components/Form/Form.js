@@ -16,9 +16,9 @@ function From({
     <div className="popup__form-container">
         <p className="popup__title">{title}</p>
         <form name={`${name}`} className="popup__form-info">
-            <input id="task-input" type="text" name="name" className="popup__input" minlength="{2}" maxlength="{40}" required />
+            <input id="task-input" type="text" name="name" className="popup__input" required />
             <div className="popup__button-container">
-                <button className="popup__cancel-button" type="button"></button>
+                <button className="popup__button" type="button">Cancel</button>
                 {children}
             </div>
         </form>
