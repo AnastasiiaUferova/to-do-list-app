@@ -6,6 +6,7 @@ import ToDoPage from "../ToDoPage/ToDoPage";
 import { Route, Routes } from "react-router-dom";
 import AddForm from "../AddForm/AddForm";
 import EditForm from "../EditForm/EditForm";
+import Rewards from "../Rewards/Rewards";
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
     <div className="App">
       <Routes>
       <Route path="/" element={<Main />}></Route>
-      <Route path="/todo" element={< ToDoPage/>}></Route>
+      <Route path="/todo" element={<ToDoPage/>}></Route>
+      <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
     </div>
   );

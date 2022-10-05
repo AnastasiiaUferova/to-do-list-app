@@ -1,11 +1,11 @@
 import React from "react";
 import "./ToDoPage.css";
 import { useCallback, useEffect, useState} from "react";
+import { NavLink } from "react-router-dom";
 import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 import ImportnantList from "../ImportantList/ImportantList";
-
 
 
 function ToDoPage() {
@@ -41,7 +41,13 @@ function ToDoPage() {
     return (
         <div className="td-page"> 
             <div className="td-page__container">
-                <h1 className="td-page__title">TODO</h1>
+                <div className="td-page__title-container">
+                <NavLink to="/"><button className="td-page__title rewards__logo">TODO</button></NavLink>
+                <div className="td-page__rewards-container">
+                    <NavLink to="/rewards"><button className="td-page__rewards"></button></NavLink>
+                    <p>Total scored: 90 points</p>
+                </div>
+                </div>
                 {isInputVisible && <TaskInput /> }
                 <TaskList />
                 <ImportnantList />
@@ -49,7 +55,6 @@ function ToDoPage() {
                 <button className="td-page__button_clear">Clear All</button>
                 {!isInputVisible && <button className="td-page__button_add"></button>}
                 </div> 
-         
             </div>
         </div>
     );

@@ -1,0 +1,82 @@
+.rewards {
+    background-color: #181824;
+}
+
+.rewards__logo {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.rewards-list__title-container {
+    width: 60vw;
+    height: 82px;
+    text-align: center;
+    margin: auto;
+    background-color: #525BB7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rewards__form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rewards__input-container {
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rewards__subtitle-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: 30px;
+}
+
+
+
+.rewards__item-input {
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    width: 20%;
+    font-size: 20px;
+
+}
+
+.rewards__points {
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    width: 4%;
+    font-size: 20px;
+    text-align: right;
+}
+
+.rewards__button {
+    width: 235px;
+    height: 60px;
+    background-color: #25273C;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 0.1em;
+    border-radius: 60px;
+    border: 2px solid #AD02FE;
+    cursor: pointer;
+    margin-top: 30px;
+}

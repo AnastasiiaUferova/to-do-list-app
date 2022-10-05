@@ -1,28 +1,34 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Rewards.css"
 
 
 function Rewards() {
     return (
         <div className="rewards">
-            <div className="important-list__title-container">
+            <NavLink to="/todo"><button className="td-page__title rewards__logo">TODO</button></NavLink>
+            
+            <div className="rewards-list__title-container">
                 <h2 className="important-list__title">Rewards table</h2>
             </div>
-            <form  className="profile__form">
-                <div className="profile__input-container">
-                    <input  id="profile-input-email" type="text" name="reward3" className="profile__item-input" defaultValue='reward 3' />
-                    <input  id="profile-input-name" type="text" name="reward1" className="profile__item-input profile__item-input_type_name" defaultValue='30-35' />
+            <form  className="rewards__form">
+                <div className="rewards__subtitle-container">
+                    <p>Rewards</p>
+                    <p>Points to be gained</p>
                 </div>
-                <div className="profile__input-container">
-                    <input  id="profile-input-email" type="text" name="reward2" className="profile__item-input" defaultValue='reward 2' />
-                    <input  id="profile-input-email" type="text" name="reward3" className="profile__item-input" defaultValue='36' />
-                </div>
-                <div className="profile__input-container">
-                    <input  id="profile-input-email" type="text" name="reward3" className="profile__item-input" defaultValue='reward 3' />
-                    <p>from {<input  id="profile-input-email" type="text" name="reward3" className="profile__item-input" defaultValue='47' />}
-                    to {<input  id="profile-input-email" type="text" name="reward3" className="profile__item-input" defaultValue='47' />}
-                    </p>
-                </div>
-                <button type="submit" className="profile__button">Edit</button>
+                <fieldset className="rewards__input-container">
+                    <input  type="text" name="reward3" className="rewards__item-input" defaultValue='reward 3' />
+                    <input  type="text" name="reward1" className="rewards__points" defaultValue='35' />
+                </fieldset >
+                <fieldset  className="rewards__input-container">
+                    <input type="text" name="reward2" className="rewards__item-input" defaultValue='reward 2' />
+                    <input  type="text" name="reward3" className="rewards__points" defaultValue='36' />
+                </fieldset>
+                <fieldset  className="rewards__input-container">
+                    <input  id="rewards-input-email" type="text" name="reward3" className="rewards__item-input" defaultValue='reward 3' />
+                    <input  type="text" name="reward3" className="rewards__points" defaultValue='36' />
+                </fieldset>
+                <button type="submit" className="rewards__button">Edit</button>
             </form>
         </div>
         

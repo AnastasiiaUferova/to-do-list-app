@@ -44,7 +44,29 @@
     cursor: pointer;
 }
 
+.td-page__title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 .td-page__button_clear:hover {
+    opacity: 0.5;
+}
+
+.td-page__rewards {
+    background-image: url(../../images/trophy-4-128.png);
+    background-size: contain;
+    width: 85px;
+    height: 85px;
+    background-color: transparent;
+    border: none;
+    margin-right: 59px;
+    cursor: pointer;
+}
+
+.td-page__rewards:hover {
     opacity: 0.5;
 }
 
