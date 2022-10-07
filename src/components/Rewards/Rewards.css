@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .rewards__form {
@@ -29,7 +30,7 @@
 
 .rewards__input-container {
     border: none;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
 }
@@ -37,12 +38,11 @@
 .rewards__subtitle-container {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 80%;
     padding-bottom: 30px;
     padding-top: 30px;
     font-size: 30px;
 }
-
 
 
 .rewards__item-input {
@@ -79,4 +79,48 @@
     border: 2px solid #AD02FE;
     cursor: pointer;
     margin-top: 30px;
+}
+
+
+@media (max-width: 800px) {
+    .rewards__subtitle-container {
+        font-size: 25px;
+    }
+
+    .rewards__points {
+        width: 10%;
+    }
+
+    .rewards__item-input {
+        width: 40%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .rewards-list__title-container {
+        width: 50vw;
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .rewards__button {
+        width: 180px;
+        height: 45px;  
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .rewards__subtitle-container {
+        font-size: 18px;
+    }
+
+    .rewards__points {
+        font-size: 15px;
+    }
+
+    .rewards__item-input {
+        font-size: 15px;
+    }
 }

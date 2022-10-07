@@ -55,6 +55,15 @@
     opacity: 0.5;
 }
 
+.td-page__rewards-container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 59px;
+}
+
 .td-page__rewards {
     background-image: url(../../images/trophy-4-128.png);
     background-size: contain;
@@ -62,7 +71,6 @@
     height: 85px;
     background-color: transparent;
     border: none;
-    margin-right: 59px;
     cursor: pointer;
 }
 
@@ -70,12 +78,46 @@
     opacity: 0.5;
 }
 
-@media (max-width: 500px) {
+.td-page__rewards-count-container {
+    background-color: #525BB7;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.td-page__rewards-count {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    color: rgba(249, 254, 255, 0.7);
+}
+
+@media (max-width: 700px) {
+    .td-page__title-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .td-page__title {
+        margin: 0;
+    }
+
+    .td-page__rewards-container {
+        margin: 0;
+    }
+
+    
+}
+
+@media (max-width: 600px) {
     .td-page__title  {
         font-size: 40px;
         line-height: 65px;
         letter-spacing: 0.1em;
-        margin-left: 21px;
         padding-top: 9px;
     }
 
@@ -84,5 +126,14 @@
         height: 60px;
         font-size: 20px;
         line-height: 33px;
+    }
+
+    .td-page__rewards {
+        width: 60px;
+        height: 60px;
+    }
+
+    .td-page__rewards-count {
+        font-size: 15px;
     }
 }

@@ -14,7 +14,7 @@ function Rewards() {
             <form  className="rewards__form">
                 <div className="rewards__subtitle-container">
                     <p>Rewards</p>
-                    <p>Points to be gained</p>
+                    <p>Points to gain</p>
                 </div>
                 <fieldset className="rewards__input-container">
                     <input  type="text" name="reward3" className="rewards__item-input" defaultValue='reward 3' />
@@ -31,7 +31,6 @@ function Rewards() {
                 <button type="submit" className="rewards__button">Edit</button>
             </form>
         </div>
-        
                 )
 
 }

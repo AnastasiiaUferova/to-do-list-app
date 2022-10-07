@@ -45,7 +45,11 @@ function ToDoPage() {
                 <NavLink to="/"><button className="td-page__title rewards__logo">TODO</button></NavLink>
                 <div className="td-page__rewards-container">
                     <NavLink to="/rewards"><button className="td-page__rewards"></button></NavLink>
-                    <p>Total scored: 90 points</p>
+                    <p className="td-page__rewards-count">Total scored in 7 days:</p>
+                    <div className="td-page__rewards-count-container">
+                        <p className="td-page__rewards-count">90 points</p>
+                    </div>
+                    
                 </div>
                 </div>
                 {isInputVisible && <TaskInput /> }
