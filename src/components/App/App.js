@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "../../index.css";
 import Main from '../Main/Main';
@@ -10,13 +11,39 @@ import Rewards from "../Rewards/Rewards";
 
 
 function App() {
+
+  const [tasks, setTasks] = useState(
+    () => JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const [isAddFormOpen, setIsAddFormOpen] = useState(false);
+
+
+  function addTask(task) {
+    setTasks([...tasks, task]);
+    setIsAddFormOpen(false);
+  }
+
+  function handleAddFormClick() {
+    setIsAddFormOpen(true);
+}
+
+function closeAllPopups() {
+    setIsAddFormOpen(false);
+}
+
   return (
     <div className="App">
       <Routes>
       <Route path="/" element={<Main />}></Route>
-      <Route path="/todo" element={<ToDoPage/>}></Route>
+      <Route path="/todo" element={<ToDoPage tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
+      <AddForm isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
     </div>
   );
 }
