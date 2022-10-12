@@ -9,7 +9,7 @@
 }
 
 .td-page__button-container {
-    margin-top: 118px;
+    margin-top: 80px;
     padding-bottom: 62px;
     display: flex;
     justify-content: space-around;
@@ -109,8 +109,6 @@
     .td-page__rewards-container {
         margin: 0;
     }
-
-    
 }
 
 @media (max-width: 600px) {

@@ -5,6 +5,7 @@
     width: 100%;
     height: 68.56px;
     margin-top: 58px;
+    margin-bottom: 15px;
 }
 
 .task-input__container {
@@ -18,6 +19,8 @@
     display: flex;
     justify-content: center;
     position: relative;
+    margin-bottom: 15px;
+
 }
 
 .task-input__input {

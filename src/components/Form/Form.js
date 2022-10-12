@@ -1,5 +1,6 @@
 import React from "react";
 import "./Form.css";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 function From({
     name,
@@ -8,7 +9,8 @@ function From({
     isOpen,
     onSubmit,
     onClose,
-    onChange
+    onChange,
+    isEmpty
 }) {
     return (
         <div
@@ -22,7 +24,8 @@ function From({
     <div className="popup__form-container">
         <p className="popup__title">{title}</p>
         <form onSubmit={onSubmit} name={`${name}`} className="popup__form-info">
-            <input onChange={onChange} id="task-input" type="text" name="name" className="popup__input" required placeholder="Enter your task"/>
+            <input onChange={onChange} id="task-input" type="text" name="name" className="popup__input" placeholder="Enter your task"/>
+            <ErrorMessage isEmpty={isEmpty}/>
             <div className="popup__button-container">
                 <button  onClick={onClose} className="popup__button" type="button">Cancel</button>
                 {children}
@@ -35,12 +38,3 @@ function From({
 }
 
 export default From;
-
-
-
-
-/*className={
-    isOpen
-    ? `popup popup_type_${name} popup_opened`
-    : `popup popup_type_${name}`
-}*/

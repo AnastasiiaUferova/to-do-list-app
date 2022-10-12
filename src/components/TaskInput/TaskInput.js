@@ -2,10 +2,12 @@ import React from "react";
 import "./TaskInput.css";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 function TaskInput({onAddTask}) {
 
     const [content, setContent] = useState("");
+    const [isEmpty, setIsEmpty] = useState(false);
 
     function handleChangeTask(e) {
         setContent(e.target.value);
@@ -22,9 +24,11 @@ function TaskInput({onAddTask}) {
     };
 
     if (!content) {
+        setIsEmpty(true);
         return 
     } else onAddTask(task);
         setContent('');
+        setIsEmpty(false);
     }
 
     return (
@@ -34,6 +38,7 @@ function TaskInput({onAddTask}) {
                     <input value={content} onChange={handleChangeTask} className="task-input__input" placeholder="Create a new todo..." type="text"></input>
                     <button className="task-input__button" type="submit"></button>
                 </form>
+                <ErrorMessage isEmpty={isEmpty} />
             </div>
         </div>
     );
