@@ -1,12 +1,21 @@
 import React from "react";
 import Form from "../Form/Form";
 import "./AddForm.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, forwardRef } from "react";
 import { nanoid } from "nanoid";
 
-export default function AddForm({isOpen, onClose, onAddTask}) {
+
+const AddForm = forwardRef((props, ref) => { 
     const [content, setContent] = useState("");
     const [isEmpty, setIsEmpty] = useState(false);
+
+    useEffect(() => {
+        if(props.isOpen===false) {
+            setContent("");
+            setIsEmpty(false);
+        }
+    }, [props.isOpen]);
+
 
     function handleChangeTask(e) {
         setContent(e.target.value);
@@ -17,29 +26,25 @@ export default function AddForm({isOpen, onClose, onAddTask}) {
     function handleSubmit(e) {
         e.preventDefault();
 
-    const task = {
+        const task = {
             id: nanoid(),
             body: taskText,
-    };
+        };
 
-
-    if (!content) {
-        setIsEmpty(true);
-        return 
-    } else onAddTask(task);
+        if (!content) {
+            setIsEmpty(true);
+            return 
+        } 
+        else props.onAddTask(task);
         setContent('');
         setIsEmpty(false);
     }
 
-
-
-    useEffect(() => {
-        setContent('');
-    }, [isOpen]);
-
     return (
-        <Form isEmpty={isEmpty} onChange={handleChangeTask} onClose={onClose} isOpen={isOpen} onSubmit={handleSubmit} name="add-form" title="Add task">
+        <Form content={content} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} onClose={props.onClose} isOpen={props.isOpen} onSubmit={handleSubmit} name="add-form" title="Add task">
             <button className="popup__button popup__send-button" type="submit"></button>
         </Form>
     );
-};
+});
+
+export default AddForm;

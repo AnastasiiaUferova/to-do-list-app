@@ -9,7 +9,7 @@ function Rewards() {
             <NavLink to="/todo"><button className="td-page__title rewards__logo">TODO</button></NavLink>
             
             <div className="rewards-list__title-container">
-                <h2 className="important-list__title">Rewards table</h2>
+                <h2 className="important-list__title rewards-list__title">Rewards table</h2>
             </div>
             <form  className="rewards__form">
                 <div className="rewards__subtitle-container">

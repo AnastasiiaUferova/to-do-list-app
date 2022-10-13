@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import "../../index.css";
 import Main from '../Main/Main';
@@ -12,6 +12,7 @@ import Rewards from "../Rewards/Rewards";
 
 function App() {
 
+
   const [tasks, setTasks] = useState(
     () => JSON.parse(localStorage.getItem("tasks")) || []
   );
@@ -21,6 +22,23 @@ function App() {
   }, [tasks]);
 
   const [isAddFormOpen, setIsAddFormOpen] = useState(false);
+
+  let ref = useRef();
+
+  useEffect(() => {
+    const checkIfClickedOutside = event => {
+        if(isAddFormOpen && ref.current && !ref.current.contains(event.target)) {
+          setIsAddFormOpen(false);
+        }
+    }
+    document.addEventListener("mousedown", checkIfClickedOutside)
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [isAddFormOpen])
+
 
 
   function addTask(task) {
@@ -43,7 +61,7 @@ function closeAllPopups() {
       <Route path="/todo" element={<ToDoPage tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
-      <AddForm isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
+      <AddForm ref={ref} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
     </div>
   );
 }
