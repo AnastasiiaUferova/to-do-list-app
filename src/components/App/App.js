@@ -10,10 +10,7 @@ import EditForm from "../EditForm/EditForm";
 import Rewards from "../Rewards/Rewards";
 import useClickOutside from "../../hooks/useClickOutside";
 
-
-
 function App() {
-
 
 const [tasks, setTasks] = useState(
     () => JSON.parse(localStorage.getItem("tasks")) || []

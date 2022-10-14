@@ -25,6 +25,13 @@
     margin-left: 20px;
 }
 
+.task__text_done {
+    text-decoration: line-through;
+    text-decoration-line: 2.5px;
+    text-decoration-style: solid;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
 .task__button-container {
     display: flex;
     justify-content: space-around;
