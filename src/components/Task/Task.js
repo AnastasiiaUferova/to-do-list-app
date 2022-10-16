@@ -1,32 +1,25 @@
 import React from "react";
 import "./Task.css";
-import {useRef, useState, useEffect} from 'react';
+import {useRef} from 'react';
 
 function Task({task, checkTask}) {
     const ref = useRef(null);
 
-    const [isChecked, setIsChecked] = useState(
-        () => JSON.parse(localStorage.getItem("checked")) || false
-    );
-
     const handleClick = () => {
         if (ref.current.checked) {
-            setIsChecked(true);
             checkTask(task.id)
         } else {
-            setIsChecked(false)
             checkTask(task.id)
         }
     };
 
-
     return (
         <div className="task"> 
             <div className="task__text-container">
-                <input ref={ref}  className="task__check" type="checkbox" onClick={handleClick}/>
+                <input ref={ref}  className="task__check" defaultChecked={task.checked} type="checkbox" onClick={handleClick}/>
                 <span className="checkbox__slider"></span>
                 <p className={
-                                isChecked 
+                                task.checked
                                     ? `task__text task__text_done`
                                     : `task__text `
                                 }

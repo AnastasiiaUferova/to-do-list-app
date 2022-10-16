@@ -42,7 +42,8 @@ const AddForm = forwardRef((props, ref) => {
     }
 
     return (
-        <Form content={content} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} onClose={props.onClose} isOpen={props.isOpen} onSubmit={handleSubmit} name="add-form" title="Add task">
+        <Form content={content} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} 
+        onClose={props.onClose} isOpen={props.isOpen} onSubmit={handleSubmit} name="add-form" title="Add task">
             <button className="popup__button popup__send-button" type="submit"></button>
         </Form>
     );
