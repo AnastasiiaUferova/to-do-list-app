@@ -26,24 +26,36 @@ let ref = useClickOutside(()=> {
   setIsAddFormOpen(false);
 })
 
-  function addTask(task) {
+function addTask(task) {
     setTasks([...tasks, task]);
     setIsAddFormOpen(false);
   }
 
-  function handleAddFormClick() {
+function handleAddFormClick() {
     setIsAddFormOpen(true);
 }
+
 
 function closeAllPopups() {
     setIsAddFormOpen(false);
 }
 
+function checkTask(id) {
+  const newTasksChecked = tasks.map((task) => {
+    if (task.id === id) {
+      task.checked = !task.checked;
+    }
+    return task;
+  });
+  setTasks(newTasksChecked);
+}
+
+
   return (
     <div className="App">
       <Routes>
       <Route path="/" element={<Main />}></Route>
-      <Route path="/todo" element={<ToDoPage tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} />}></Route>
+      <Route path="/todo" element={<ToDoPage tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} checkTask={checkTask} />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
       <AddForm ref={ref} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>

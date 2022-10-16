@@ -9,6 +9,7 @@ function TaskInput({onAddTask}) {
     const [content, setContent] = useState("");
     const [isEmpty, setIsEmpty] = useState(false);
 
+
     function handleChangeTask(e) {
         setContent(e.target.value);
     }
@@ -21,6 +22,7 @@ function TaskInput({onAddTask}) {
     const task = {
             id: nanoid(),
             body: taskText,
+            checked: false
     };
 
     if (!content) {

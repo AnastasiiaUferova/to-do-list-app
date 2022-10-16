@@ -12,19 +12,19 @@ const Form = forwardRef((props, ref) => {
             : `popup popup_type_${props.name}`
         }
         >
-        <div className="popup__container">
-    <div className="popup__form-container">
-        <p className="popup__title">{props.title}</p>
-        <form ref={ref} onSubmit={props.onSubmit} name={`${props.name}`} className="popup__form-info">
-            <input value={props.content} onChange={props.onChange} id="task-input" type="text" name="name" className="popup__input" placeholder="Enter your task"/>
-            <ErrorMessage isEmpty={props.isEmpty}/>
-            <div className="popup__button-container">
-                <button  onClick={props.onClose} className="popup__button" type="button">Cancel</button>
-                {props.children}
+            <div className="popup__container">
+                <div className="popup__form-container">
+                    <p className="popup__title">{props.title}</p>
+                    <form ref={ref} onSubmit={props.onSubmit} name={`${props.name}`} className="popup__form-info">
+                        <input value={props.content} onChange={props.onChange} id="task-input" type="text" name="name" className="popup__input" placeholder="Enter your task"/>
+                        <ErrorMessage isEmpty={props.isEmpty}/>
+                        <div className="popup__button-container">
+                            <button  onClick={props.onClose} className="popup__button" type="button">Cancel</button>
+                            {props.children}
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-    </div>
-</div>
         </div>
     );
 })

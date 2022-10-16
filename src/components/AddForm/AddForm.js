@@ -29,6 +29,7 @@ const AddForm = forwardRef((props, ref) => {
         const task = {
             id: nanoid(),
             body: taskText,
+            checked: false
         };
 
         if (!content) {

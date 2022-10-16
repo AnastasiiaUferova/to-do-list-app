@@ -6,11 +6,10 @@ import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 import ImportnantList from "../ImportantList/ImportantList";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
-function ToDoPage({tasks, onAddTask, onOpenAddForm}) {
+function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask}) {
 
-    const [isInputVisible, setInputVisible] = useState(true)
+    const [isInputVisible, setInputVisible] = useState(true);
 
     const Resize = useCallback(
         (width) => {
@@ -53,7 +52,7 @@ function ToDoPage({tasks, onAddTask, onOpenAddForm}) {
                 </div>
                 </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
-                <TaskList tasks={tasks} />
+                <TaskList checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
                 <ImportnantList />
                 <div className="td-page__button-container">
                 <button className="td-page__button_clear">Clear All</button>
