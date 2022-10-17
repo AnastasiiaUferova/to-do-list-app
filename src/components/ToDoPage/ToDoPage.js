@@ -7,7 +7,7 @@ import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 import ImportnantList from "../ImportantList/ImportantList";
 
-function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask}) {
+function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask, tasksLength}) {
 
     const [isInputVisible, setInputVisible] = useState(true);
 
@@ -52,7 +52,7 @@ function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask}) {
                 </div>
                 </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
-                <TaskList checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
+                <TaskList tasksLength={tasksLength} checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
                 <ImportnantList />
                 <div className="td-page__button-container">
                 <button className="td-page__button_clear">Clear All</button>
@@ -64,3 +64,21 @@ function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask}) {
 }
 
 export default ToDoPage;
+
+
+/*
+ const TaskList = <div > 
+    {tasks && tasks.map((task) => (
+            <Task checkTask={checkTask} key={task.id} task={task} />
+        ))
+    }
+    </div> 
+    const decorImage = <img alt="decor" src={image} ></img>
+
+
+    return (
+        <div className="task-list"> 
+        {tasksLength === 0 ? decorImage : TaskList}
+        </div>
+    );
+    */

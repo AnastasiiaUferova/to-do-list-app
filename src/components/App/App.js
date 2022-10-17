@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect} from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "../../index.css";
 import Main from '../Main/Main';
 import ToDoPage from "../ToDoPage/ToDoPage";
-import { Route, Routes } from "react-router-dom";
 import AddForm from "../AddForm/AddForm";
 import EditForm from "../EditForm/EditForm";
 import Rewards from "../Rewards/Rewards";
@@ -12,7 +12,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 
 function App() {
 
-const [tasks, setTasks] = useState(
+  const [tasks, setTasks] = useState(
     () => JSON.parse(localStorage.getItem("tasks")) || []
   );
 
@@ -22,9 +22,13 @@ useEffect(() => {
 
 const [isAddFormOpen, setIsAddFormOpen] = useState(false);
 
+let tasksLength = tasks.length
+console.log(tasksLength)
+
 let ref = useClickOutside(()=> {
   setIsAddFormOpen(false);
 })
+
 
 function addTask(task) {
     setTasks([...tasks, task]);
@@ -51,12 +55,11 @@ function checkTask(id) {
 }
 
 
-
   return (
     <div className="App">
       <Routes>
       <Route path="/" element={<Main />}></Route>
-      <Route path="/todo" element={<ToDoPage tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} checkTask={checkTask} />}></Route>
+      <Route path="/todo" element={<ToDoPage tasksLength={tasksLength} tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} checkTask={checkTask} />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
       <AddForm ref={ref} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>

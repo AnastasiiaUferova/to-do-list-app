@@ -5,8 +5,20 @@
     column-gap: 20px;
     align-self: center;
     width: 93vw;
-    margin:auto;
-    margin-top: 95px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.task-list__image-container {
+    display: flex;
+    margin-top: 80px;
+    align-self: center;
+}
+
+.task-list__image {
+    margin: auto;
+    align-self: center;
+
 }
 
 @media (max-width: 1070px) {
@@ -19,4 +31,9 @@
     .task-list {
         margin-top: 40px;
     }
+
+
+.task-list__image-container {
+    margin-top: 30px;
+}
 }
