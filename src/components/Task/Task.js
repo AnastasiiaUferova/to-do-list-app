@@ -2,7 +2,7 @@ import React from "react";
 import "./Task.css";
 import {useRef} from 'react';
 
-function Task({task, checkTask}) {
+function Task({task, checkTask, onDeleteTask}) {
     const ref = useRef(null);
 
     const handleClick = () => {
@@ -12,6 +12,11 @@ function Task({task, checkTask}) {
             checkTask(task.id)
         }
     };
+
+    function onSubmit(e) {
+        e.preventDefault();
+        onDeleteTask(task);
+    }
 
     return (
         <div className="task"> 
@@ -28,7 +33,7 @@ function Task({task, checkTask}) {
             <div className="task__button-container">
                 <button className="task__button" type="submit"></button>
                 <button className="task__button" type="submit"></button>
-                <button className="task__button" type="submit"></button>
+                <button className="task__button" type="submit" onClick={onSubmit}></button>
             <form name="selection"></form>
                 <select className="task-form__selection">
 	                <option>1p</option>

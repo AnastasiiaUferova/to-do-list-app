@@ -7,7 +7,7 @@ import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 import ImportnantList from "../ImportantList/ImportantList";
 
-function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask, tasksLength}) {
+function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask}) {
 
     const [isInputVisible, setInputVisible] = useState(true);
 
@@ -52,7 +52,7 @@ function ToDoPage({tasks, onAddTask, onOpenAddForm, checkTask, tasksLength}) {
                 </div>
                 </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
-                <TaskList tasksLength={tasksLength} checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
+                <TaskList onDeleteTask={onDeleteTask} tasksLength={tasksLength} checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
                 <ImportnantList />
                 <div className="td-page__button-container">
                 <button className="td-page__button_clear">Clear All</button>

@@ -55,11 +55,19 @@ function checkTask(id) {
 }
 
 
+function deleteTask(selectedTask) {
+  const newTasks = tasks.filter((task) => {
+    return task.id !== selectedTask.id
+  });
+  setTasks(newTasks);
+}
+
+
   return (
     <div className="App">
       <Routes>
       <Route path="/" element={<Main />}></Route>
-      <Route path="/todo" element={<ToDoPage tasksLength={tasksLength} tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} checkTask={checkTask} />}></Route>
+      <Route path="/todo" element={<ToDoPage onDeleteTask={deleteTask} tasksLength={tasksLength} tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} checkTask={checkTask} />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
       <AddForm ref={ref} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
