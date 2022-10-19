@@ -21,12 +21,13 @@ useEffect(() => {
   }, [tasks]);
 
 const [isAddFormOpen, setIsAddFormOpen] = useState(false);
+const [isEditFormOpen, setIsEditFormOpen] = useState(false);
+const [selectedTask, setSelectedTask] = useState({});
 
 let tasksLength = tasks.length
-console.log(tasksLength)
 
 let ref = useClickOutside(()=> {
-  setIsAddFormOpen(false);
+  closeAllPopups();
 })
 
 
@@ -40,8 +41,15 @@ function handleAddFormClick() {
 }
 
 
+function handleEditFormClick(task) {
+    setIsEditFormOpen(true);
+    setSelectedTask(task); //choosing the right task to edit
+}
+
+
 function closeAllPopups() {
     setIsAddFormOpen(false);
+    setIsEditFormOpen(false);
 }
 
 function checkTask(id) {
@@ -63,14 +71,40 @@ function deleteTask(selectedTask) {
 }
 
 
+function updateTask(id, body) {
+
+  const newTasksUpdate = tasks.map((task) => {
+
+    if (task.id === id) {
+      task.body = body;
+      task.check = false;
+    }
+
+  return task;
+  });
+
+  setTasks(newTasksUpdate);
+  closeAllPopups()
+}
+
+
   return (
     <div className="App">
       <Routes>
       <Route path="/" element={<Main />}></Route>
-      <Route path="/todo" element={<ToDoPage onDeleteTask={deleteTask} tasksLength={tasksLength} tasks={tasks} onAddTask={addTask} onOpenAddForm={handleAddFormClick} checkTask={checkTask} />}></Route>
+      <Route path="/todo" element={<ToDoPage 
+      onDeleteTask={deleteTask} 
+      onOpenEditForm={handleEditFormClick} 
+      tasksLength={tasksLength} 
+      tasks={tasks} 
+      onAddTask={addTask} 
+      onOpenAddForm={handleAddFormClick} 
+      checkTask={checkTask}
+      />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
       <AddForm ref={ref} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
+      <EditForm task={selectedTask} ref={ref} isOpen={isEditFormOpen} onClose={closeAllPopups} onUpdateTask={updateTask}/>
     </div>
   );
 }

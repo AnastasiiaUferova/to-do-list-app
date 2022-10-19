@@ -1,14 +1,15 @@
 import React from "react";
 import "./TaskList.css";
 import Task from "../Task/Task";
-import image from "../../images/DecorImage1.svg"
+import image from "../../images/DecorImage1.svg";
 
-function TaskList({tasks, checkTask, tasksLength, onDeleteTask}) {
+function TaskList({tasks, checkTask, tasksLength, onDeleteTask, onOpenEditForm}) {
 
     const TaskList = <div className= "task-list" > 
-    {tasks && tasks.map((task) => (
-            <Task checkTask={checkTask} onDeleteTask={onDeleteTask} key={task.id} task={task} />
-        ))
+    {tasks && tasks.map((task) => {
+            return <Task onOpenEditForm={onOpenEditForm} checkTask={checkTask} onDeleteTask={onDeleteTask} key={task.id} task={task} />
+            
+})
     }
     </div> 
     const decorImage = 
@@ -20,6 +21,7 @@ function TaskList({tasks, checkTask, tasksLength, onDeleteTask}) {
         <div > 
         {tasksLength === 0 ? decorImage : TaskList}
         </div>
+        
     );
 }
 

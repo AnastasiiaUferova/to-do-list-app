@@ -33,7 +33,11 @@
     }
 
 
-.task-list__image-container {
-    margin-top: 30px;
-}
+    .task-list__image-container {
+        margin-top: 30px;
+    }
+
+    .task-list__image {
+        width: 65%;
+    }
 }
