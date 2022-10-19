@@ -6,7 +6,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 
-function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll}) {
+function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll, addToImportant}) {
 
     const [isInputVisible, setInputVisible] = useState(true);
 
@@ -51,7 +51,13 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
                 </div>
                 </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
-                <TaskList selectedTask={selectedTask} onOpenEditForm={onOpenEditForm} onDeleteTask={onDeleteTask} tasksLength={tasksLength} checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
+                <TaskList onOpenEditForm={onOpenEditForm} 
+                onDeleteTask={onDeleteTask} 
+                tasksLength={tasksLength} 
+                checkTask={checkTask} 
+                onAddTask={onAddTask} 
+                tasks={tasks}
+                addToImportant={addToImportant}/>
                 <div className="td-page__button-container">
                 <button onClick={onClearAll} className="td-page__button_clear">Clear All</button>
                 {!isInputVisible && <button className="td-page__button_add" onClick={onOpenAddForm}></button>}

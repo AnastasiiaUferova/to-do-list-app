@@ -2,16 +2,17 @@ import React from "react";
 import "./Task.css";
 import {useRef} from 'react';
 
-function Task({task, checkTask, onDeleteTask, onOpenEditForm}) {
-    const ref = useRef(null);
+function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
+    const checkedRef = useRef(null);
+    const importantRef = useRef(null);
 
-    const handleClick = () => {
-        if (ref.current.checked) {
-            checkTask(task.id)
-        } else {
-            checkTask(task.id)
-        }
+    const handleCheckClick = () => {
+        checkTask(task.id)
     };
+
+    const handleImportantClick = () => {
+            addToImportant(task.id)
+    }
 
     function onSubmitDelete(e) {
         e.preventDefault();
@@ -25,7 +26,7 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm}) {
     return (
         <div className="task"> 
             <div className="task__text-container">
-                <input ref={ref}  className="task__check" defaultChecked={task.checked} type="checkbox" onClick={handleClick}/>
+                <input ref={checkedRef}  className="task__check" defaultChecked={task.checked} type="checkbox" onClick={handleCheckClick}/>
                 <span className="checkbox__slider"></span>
                 <p className={
                                 task.checked
@@ -35,7 +36,7 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm}) {
                 >{task.body}</p>
             </div>
             <div className="task__button-container">
-                <button className="task__button" type="submit"></button>
+                <input ref={importantRef}  className="task__check_important"  type="checkbox" onClick={handleImportantClick}/>
                 <button className="task__button" onClick={handleOpenEditPopup} ></button>
                 <button className="task__button" type="submit" onClick={onSubmitDelete}></button>
             <form name="selection"></form>

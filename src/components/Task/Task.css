@@ -15,7 +15,6 @@
     align-items: center;
 }
 
-
 .task__text {
     font-weight: 400;
     font-size: 25px;
@@ -51,20 +50,20 @@
 }
 
 
-.task__button:nth-of-type(1) {
+.task__button:nth-of-type() {
     background-image: url(../../images/EmptyFlag-min.svg);
 }
 
-.task__button:nth-of-type(2) {
+.task__button:nth-of-type(1) {
     background-image: url(../../images/EditTask-min.svg);
 }
 
-.task__button:nth-of-type(3) {
+.task__button:nth-of-type(2) {
     background-image: url(../../images/Delete\ Task-min.svg);
 }
 
 
-input[type="checkbox"] {
+.task__check {
     -webkit-appearance: none;
     appearance: none;
     margin: 0;
@@ -78,7 +77,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"]::before {
+.task__check::before {
     content: "";
     width: 48px;
     height: 44px;
@@ -91,13 +90,46 @@ input[type="checkbox"]::before {
 }
 
 
-input[type="checkbox"]:checked::before {
+.task__check:checked::before {
     transform: scale(1);
 }
 
-input[type="checkbox"]:hover {
+.task__check:hover {
     opacity: 0.7;
 }
+
+
+.task__check_important {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 33px;
+    height: 40px;
+    border: none;
+    place-content: center;
+    cursor: pointer;
+    background-image: url(../../images/EmptyFlag-min.svg);
+    background-size: cover;
+    display: block;
+}
+
+.task__check_important:checked {
+    content: "";
+    width: 30px;
+    height: 40px;
+    border: none;
+    place-content: center;
+    background-image: url(../../images/FilledFlag-min.svg);
+
+    background-size: cover;
+    display: block;
+}
+
+
+.task__check_important:hover {
+    opacity: 0.7;
+}
+
 
 .task-form__selection {
     background-color: transparent;
@@ -122,12 +154,12 @@ input[type="checkbox"]:hover {
         margin-left: 20px;
 }
 
-    input[type="checkbox"] {
-        width: 30px;
-        height: 28px;
-}
+    .task__check {
+            width: 30px;
+            height: 28px;
+    }
 
-    input[type="checkbox"]::before {
+    .task__check::before {
         width: 30px;
         height: 28px;
         background-size: contain;
@@ -137,6 +169,16 @@ input[type="checkbox"]:hover {
         width: 22px;
         height: 21px;
         background-size: contain;
+    }
+
+    .task__check_important {
+        width: 20px;
+        height: 21px;
+    }
+
+    .task__check_important:checked {
+        width: 18px;
+        height: 21px;
     }
 
     .task-form__selection {

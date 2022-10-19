@@ -3,12 +3,16 @@ import "./TaskList.css";
 import Task from "../Task/Task";
 import image from "../../images/DecorImage1.svg";
 
-function TaskList({tasks, checkTask, tasksLength, onDeleteTask, onOpenEditForm}) {
+function TaskList({addToImportant, tasks, checkTask, tasksLength, onDeleteTask, onOpenEditForm}) {
 
     const TaskList = <div className= "task-list" > 
     {tasks && tasks.map((task) => {
-            return <Task onOpenEditForm={onOpenEditForm} checkTask={checkTask} onDeleteTask={onDeleteTask} key={task.id} task={task} />
-            
+            return <Task onOpenEditForm={onOpenEditForm} 
+            checkTask={checkTask} 
+            onDeleteTask={onDeleteTask} 
+            key={task.id} 
+            task={task}
+            addToImportant={addToImportant}/>
 })
     }
     </div> 

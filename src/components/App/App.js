@@ -62,6 +62,16 @@ function checkTask(id) {
   setTasks(newTasksChecked);
 }
 
+function addToImportant(id) {
+  const newTasksChecked = tasks.map((task) => {
+    if (task.id === id) {
+      task.important = !task.important;
+    }
+    return task;
+  });
+  setTasks(newTasksChecked);
+}
+
 
 function deleteTask(selectedTask) {
   const newTasks = tasks.filter((task) => {
@@ -105,6 +115,7 @@ function updateTask(id, body) {
       onAddTask={addTask} 
       onOpenAddForm={handleAddFormClick} 
       checkTask={checkTask}
+      addToImportant={addToImportant}
       onClearAll={handleClearAll}
       />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
