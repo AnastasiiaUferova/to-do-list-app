@@ -70,6 +70,11 @@ function deleteTask(selectedTask) {
   setTasks(newTasks);
 }
 
+function handleClearAll() {
+  setTasks([]);
+  localStorage.removeItem("tasks");
+}
+
 
 function updateTask(id, body) {
 
@@ -100,6 +105,7 @@ function updateTask(id, body) {
       onAddTask={addTask} 
       onOpenAddForm={handleAddFormClick} 
       checkTask={checkTask}
+      onClearAll={handleClearAll}
       />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>

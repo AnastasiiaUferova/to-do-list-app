@@ -19,7 +19,6 @@ const EditForm = forwardRef((props, ref) => {
 
     function handleChangeTask(e) {
         setContent(e.target.value);
-       // console.log(content)
     }
 
     function handleSubmit(e) {
@@ -35,10 +34,8 @@ const EditForm = forwardRef((props, ref) => {
         setIsEmpty(false);
     }
 
-    console.log(props.task.body)
-
     return (
-        <Form defaultValue ={content} content={content} taskRef={taskRef} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} 
+        <Form content={content} taskRef={taskRef} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} 
         onClose={props.onClose} isOpen={props.isOpen} onSubmit={handleSubmit} name="edit-form" title="Edit task">
             <button className="popup__button popup__edit-button" type="submit">Edit</button>
         </Form>

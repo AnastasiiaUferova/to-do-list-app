@@ -5,9 +5,8 @@ import { NavLink } from "react-router-dom";
 import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
-import ImportnantList from "../ImportantList/ImportantList";
 
-function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm}) {
+function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll}) {
 
     const [isInputVisible, setInputVisible] = useState(true);
 
@@ -53,9 +52,8 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
                 </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
                 <TaskList selectedTask={selectedTask} onOpenEditForm={onOpenEditForm} onDeleteTask={onDeleteTask} tasksLength={tasksLength} checkTask={checkTask} onAddTask={onAddTask} tasks={tasks} />
-                <ImportnantList />
                 <div className="td-page__button-container">
-                <button className="td-page__button_clear">Clear All</button>
+                <button onClick={onClearAll} className="td-page__button_clear">Clear All</button>
                 {!isInputVisible && <button className="td-page__button_add" onClick={onOpenAddForm}></button>}
                 </div> 
             </div>
@@ -64,21 +62,3 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
 }
 
 export default ToDoPage;
-
-
-/*
- const TaskList = <div > 
-    {tasks && tasks.map((task) => (
-            <Task checkTask={checkTask} key={task.id} task={task} />
-        ))
-    }
-    </div> 
-    const decorImage = <img alt="decor" src={image} ></img>
-
-
-    return (
-        <div className="task-list"> 
-        {tasksLength === 0 ? decorImage : TaskList}
-        </div>
-    );
-    */
