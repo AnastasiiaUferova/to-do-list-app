@@ -40,14 +40,13 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
         <div className="td-page"> 
             <div className="td-page__container">
                 <div className="td-page__title-container">
-                <NavLink to="/"><button className="td-page__title rewards__logo">TODO</button></NavLink>
+                    <NavLink to="/"><button className="td-page__title rewards__logo">TODO</button></NavLink>
                 <div className="td-page__rewards-container">
                     <NavLink to="/rewards"><button className="td-page__rewards"></button></NavLink>
                     <p className="td-page__rewards-count">Total scored in 7 days:</p>
                     <div className="td-page__rewards-count-container">
                         <p className="td-page__rewards-count">90 points</p>
                     </div>
-                    
                 </div>
                 </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }

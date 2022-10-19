@@ -41,6 +41,7 @@ function TaskInput({onAddTask}) {
                     <button className="task-input__button" type="submit"></button>
                 </form>
                 <ErrorMessage isEmpty={isEmpty} />
+    
             </div>
         </div>
     );

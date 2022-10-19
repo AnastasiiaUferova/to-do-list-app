@@ -51,6 +51,19 @@
 
 }
 
+.td-page__important-container {
+    display: flex;
+    align-items: center;
+    margin-top:  50px;
+}
+
+.td-page_important {
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
 .td-page__button_clear:hover {
     opacity: 0.5;
 }

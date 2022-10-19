@@ -26,8 +26,12 @@ const [selectedTask, setSelectedTask] = useState({});
 
 let tasksLength = tasks.length
 
-let ref = useClickOutside(()=> {
-  closeAllPopups();
+let addRef = useClickOutside(()=> {
+  setIsAddFormOpen(false);
+})
+
+let editRef = useClickOutside(()=> {
+  setIsEditFormOpen(false);
 })
 
 
@@ -120,8 +124,8 @@ function updateTask(id, body) {
       />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
-      <AddForm ref={ref} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
-      <EditForm task={selectedTask} ref={ref} isOpen={isEditFormOpen} onClose={closeAllPopups} onUpdateTask={updateTask}/>
+      <AddForm ref={addRef} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
+      <EditForm task={selectedTask} ref={editRef} isOpen={isEditFormOpen} onClose={closeAllPopups} onUpdateTask={updateTask}/>
     </div>
   );
 }

@@ -5,7 +5,6 @@ import { useState, forwardRef, useEffect} from "react";
 
 
 const EditForm = forwardRef((props, ref) => { 
-    const taskRef = React.useRef();
     const [content, setContent] = useState(props.task.body);
     const [isEmpty, setIsEmpty] = useState(false);
 
@@ -35,7 +34,7 @@ const EditForm = forwardRef((props, ref) => {
     }
 
     return (
-        <Form content={content} taskRef={taskRef} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} 
+        <Form content={content} ref={ref} isEmpty={isEmpty} onChange={handleChangeTask} 
         onClose={props.onClose} isOpen={props.isOpen} onSubmit={handleSubmit} name="edit-form" title="Edit task">
             <button className="popup__button popup__edit-button" type="submit">Edit</button>
         </Form>
