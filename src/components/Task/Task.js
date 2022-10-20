@@ -7,11 +7,20 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
     const importantRef = useRef(null);
 
     const handleCheckClick = () => {
-        checkTask(task.id)
+        if (checkedRef.current.checked) {
+            checkTask(task.id)
+        } else {
+            checkTask(task.id)
+        }
     };
 
     const handleImportantClick = () => {
+
+        if (importantRef.current.checked) {
             addToImportant(task.id)
+        } else {
+            addToImportant(task.id)
+        }
     }
 
     function onSubmitDelete(e) {
@@ -36,7 +45,7 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
                 >{task.body}</p>
             </div>
             <div className="task__button-container">
-                <input ref={importantRef}  className="task__check_important"  type="checkbox" onClick={handleImportantClick}/>
+                <input ref={importantRef}  defaultChecked={task.important} className="task__check_important"  type="checkbox" onClick={handleImportantClick}/>
                 <button className="task__button" onClick={handleOpenEditPopup} ></button>
                 <button className="task__button" type="submit" onClick={onSubmitDelete}></button>
             <form name="selection"></form>

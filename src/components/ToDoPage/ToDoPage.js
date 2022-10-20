@@ -1,14 +1,28 @@
 import React from "react";
 import "./ToDoPage.css";
-import { useCallback, useEffect, useState} from "react";
+import { useCallback, useEffect, useState, useRef} from "react";
 import { NavLink } from "react-router-dom";
 import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 
-function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll, addToImportant}) {
+function ToDoPage({fliterImportant, tasks, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll, addToImportant}) {
 
     const [isInputVisible, setInputVisible] = useState(true);
+    const [checked, setChecked] = useState(false);
+
+    const checkedRef = useRef(null);
+
+    const handleCheck = () => {
+        if (checkedRef.current.checked) {
+            setChecked(!checked)
+            fliterImportant(!checked);
+        } else {
+            setChecked(!checked)
+            fliterImportant(!checked);
+        }
+    };
+
 
     const Resize = useCallback(
         (width) => {
@@ -37,18 +51,24 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
     }, [dynamicResize]) // when changing window width
 
     return (
-        <div className="td-page"> 
-            <div className="td-page__container">
-                <div className="td-page__title-container">
-                    <NavLink to="/"><button className="td-page__title rewards__logo">TODO</button></NavLink>
+        <div className="td-page">
+        <div className="td-page__container">
+        <div className="td-page__title-container">
+            <NavLink to="/"><button className="td-page__title rewards__logo">TODO</button></NavLink>
+            <div className="td-page__unils-container">
+                <div className="td-page__important-container">
+                    <input
+                    ref={checkedRef} onChange={handleCheck} defaultChecked={false} className="task__check_important" type="checkbox" />
+                </div>
                 <div className="td-page__rewards-container">
                     <NavLink to="/rewards"><button className="td-page__rewards"></button></NavLink>
                     <p className="td-page__rewards-count">Total scored in 7 days:</p>
                     <div className="td-page__rewards-count-container">
-                        <p className="td-page__rewards-count">90 points</p>
+                    <p className="td-page__rewards-count">90 points</p>
                     </div>
                 </div>
-                </div>
+            </div>
+        </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
                 <TaskList onOpenEditForm={onOpenEditForm} 
                 onDeleteTask={onDeleteTask} 
@@ -58,7 +78,7 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
                 tasks={tasks}
                 addToImportant={addToImportant}/>
                 <div className="td-page__button-container">
-                <button onClick={onClearAll} className="td-page__button_clear">Clear All</button>
+                    <button onClick={onClearAll} className="td-page__button_clear">Clear All</button>
                 {!isInputVisible && <button className="td-page__button_add" onClick={onOpenAddForm}></button>}
                 </div> 
             </div>
@@ -67,3 +87,9 @@ function ToDoPage({tasks, selectedTask, onAddTask, onOpenAddForm, checkTask, tas
 }
 
 export default ToDoPage;
+
+/*
+<div className="td-page__important-container">
+        <input className="task__check_important" type="checkbox" />
+</div>
+*/

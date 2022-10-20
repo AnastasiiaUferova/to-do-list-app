@@ -16,9 +16,33 @@ function App() {
     () => JSON.parse(localStorage.getItem("tasks")) || []
   );
 
+  let sampleTasks = [...tasks]
+
+  const [importantTasks, setImportantTasks] = useState(sampleTasks.filter((task) => {
+    return task.important === true;
+  })
+  );
+
+  const [finalTasks, setFinalTasks] = useState(tasks)
+
+  
+    function fliterImportant(checked) {
+      if (checked) {
+        setFinalTasks(importantTasks)
+      }
+      else setFinalTasks(tasks);
+    }
+
+  
+
+
 useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    setFinalTasks(tasks);
+    
   }, [tasks]);
+
+
 
 const [isAddFormOpen, setIsAddFormOpen] = useState(false);
 const [isEditFormOpen, setIsEditFormOpen] = useState(false);
@@ -74,7 +98,13 @@ function addToImportant(id) {
     return task;
   });
   setTasks(newTasksChecked);
+  setImportantTasks(tasks.filter((task) => {
+    return task.important === true;
+  }))
 }
+
+// problem: when important on - cannot delete from inportant
+
 
 
 function deleteTask(selectedTask) {
@@ -97,12 +127,13 @@ function updateTask(id, body) {
     if (task.id === id) {
       task.body = body;
       task.check = false;
+      task.important = false;
     }
 
   return task;
   });
 
-  setTasks(newTasksUpdate);
+  setFinalTasks(newTasksUpdate);
   closeAllPopups()
 }
 
@@ -115,12 +146,13 @@ function updateTask(id, body) {
       onDeleteTask={deleteTask} 
       onOpenEditForm={handleEditFormClick} 
       tasksLength={tasksLength} 
-      tasks={tasks} 
+      tasks={finalTasks} 
       onAddTask={addTask} 
       onOpenAddForm={handleAddFormClick} 
       checkTask={checkTask}
       addToImportant={addToImportant}
       onClearAll={handleClearAll}
+      fliterImportant={fliterImportant}
       />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
