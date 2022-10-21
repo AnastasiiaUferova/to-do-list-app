@@ -33,8 +33,6 @@ function App() {
       else setFinalTasks(tasks);
     }
 
-  
-
 
 useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -91,20 +89,19 @@ function checkTask(id) {
 }
 
 function addToImportant(id) {
-  const newTasksChecked = tasks.map((task) => {
+  let newTasksChecked = tasks.map((task) => {
     if (task.id === id) {
       task.important = !task.important;
     }
     return task;
   });
-  setTasks(newTasksChecked);
-  setImportantTasks(tasks.filter((task) => {
+  let newImportantTasksChecked = newTasksChecked.filter((task) => {
     return task.important === true;
-  }))
+  });
+  setTasks(newTasksChecked);
+  setImportantTasks(newImportantTasksChecked)
+
 }
-
-// problem: when important on - cannot delete from inportant
-
 
 
 function deleteTask(selectedTask) {
@@ -153,6 +150,7 @@ function updateTask(id, body) {
       addToImportant={addToImportant}
       onClearAll={handleClearAll}
       fliterImportant={fliterImportant}
+
       />}></Route>
       <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>

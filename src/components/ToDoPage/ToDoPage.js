@@ -23,6 +23,13 @@ function ToDoPage({fliterImportant, tasks, onAddTask, onOpenAddForm, checkTask, 
         }
     };
 
+    useEffect(() => {
+        if(checked) {
+            fliterImportant(checked)
+        }
+        
+    }, [checked, fliterImportant]);
+
 
     const Resize = useCallback(
         (width) => {
