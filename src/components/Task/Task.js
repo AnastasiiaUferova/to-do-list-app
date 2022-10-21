@@ -1,6 +1,7 @@
 import React from "react";
 import "./Task.css";
 import {useRef} from 'react';
+import { Reorder } from "framer-motion";
 
 function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
     const checkedRef = useRef(null);
@@ -33,7 +34,11 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
     }
 
     return (
-        <div className="task"> 
+        <Reorder.Item className="task" 
+        value={task}
+        whileDrag={{
+            scale: 1.1
+        }}> 
             <div className="task__text-container">
                 <input ref={checkedRef}  className="task__check" defaultChecked={task.checked} type="checkbox" onClick={handleCheckClick}/>
                 <span className="checkbox__slider"></span>
@@ -55,7 +60,7 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
 	                <option>3p</option>
                 </select>
             </div>
-        </div>
+        </Reorder.Item>
     );
 }
 

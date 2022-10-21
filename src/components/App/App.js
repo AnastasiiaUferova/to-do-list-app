@@ -149,6 +149,7 @@ function updateTask(id, body) {
       onOpenEditForm={handleEditFormClick} 
       tasksLength={tasksLength} 
       tasks={finalTasks} 
+      setFinalTasks = {setFinalTasks}
       onAddTask={addTask} 
       onOpenAddForm={handleAddFormClick} 
       checkTask={checkTask}

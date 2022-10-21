@@ -6,7 +6,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import TaskInput from "../TaskInput/TaskInput";
 import TaskList from "../TaskList/TaskList";
 
-function ToDoPage({fliterImportant, tasks, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll, addToImportant}) {
+function ToDoPage({setFinalTasks, fliterImportant, tasks, onAddTask, onOpenAddForm, checkTask, tasksLength, onDeleteTask, onOpenEditForm, onClearAll, addToImportant}) {
 
     const [isInputVisible, setInputVisible] = useState(true);
     const [checked, setChecked] = useState(false);
@@ -83,7 +83,8 @@ function ToDoPage({fliterImportant, tasks, onAddTask, onOpenAddForm, checkTask, 
                 checkTask={checkTask} 
                 onAddTask={onAddTask} 
                 tasks={tasks}
-                addToImportant={addToImportant}/>
+                addToImportant={addToImportant}
+                setFinalTasks = {setFinalTasks}/>
                 <div className="td-page__button-container">
                     <button onClick={onClearAll} className="td-page__button_clear">Clear All</button>
                 {!isInputVisible && <button className="td-page__button_add" onClick={onOpenAddForm}></button>}
