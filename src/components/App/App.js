@@ -16,9 +16,8 @@ function App() {
     () => JSON.parse(localStorage.getItem("tasks")) || []
   );
 
-  let sampleTasks = [...tasks]
 
-  const [importantTasks, setImportantTasks] = useState(sampleTasks.filter((task) => {
+  const [importantTasks, setImportantTasks] = useState([...tasks].filter((task) => {
     return task.important === true;
   })
   );
@@ -105,10 +104,16 @@ function addToImportant(id) {
 
 
 function deleteTask(selectedTask) {
-  const newTasks = tasks.filter((task) => {
+  let newTasks = tasks.filter((task) => {
     return task.id !== selectedTask.id
   });
+
+  let newImportantTasks = newTasks.filter((task) => {
+    return task.important === true;
+  })
   setTasks(newTasks);
+  setImportantTasks(newImportantTasks);
+
 }
 
 function handleClearAll() {
