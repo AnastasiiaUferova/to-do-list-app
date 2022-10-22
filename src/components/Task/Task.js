@@ -45,7 +45,7 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
                 <p className={
                                 task.checked
                                     ? `task__text task__text_done`
-                                    : `task__text `
+                                    : `task__text`
                                 }
                 >{task.body}</p>
             </div>
@@ -53,12 +53,6 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
                 <input ref={importantRef}  defaultChecked={task.important} className="task__check_important"  type="checkbox" onClick={handleImportantClick}/>
                 <button className="task__button" onClick={handleOpenEditPopup} ></button>
                 <button className="task__button" type="submit" onClick={onSubmitDelete}></button>
-            <form name="selection"></form>
-                <select className="task-form__selection">
-	                <option>1p</option>
-	                <option>2p</option>
-	                <option>3p</option>
-                </select>
             </div>
         </Reorder.Item>
     );

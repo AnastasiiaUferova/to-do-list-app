@@ -1,6 +1,5 @@
 .task-list {
     display: grid;
-    grid-template-columns: (1, 60%);
     row-gap: 27px;
     column-gap: 20px;
     align-self: center;
@@ -21,7 +20,10 @@
 
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 800px) {
+    .task-list {
+        width: 80vw;
+    }
 }
 
 @media (max-width: 500px) {

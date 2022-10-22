@@ -67,13 +67,6 @@ function ToDoPage({setFinalTasks, fliterImportant, tasks, onAddTask, onOpenAddFo
                     <input
                     ref={checkedRef} onChange={handleCheck} defaultChecked={false} className="task__check_important" type="checkbox" />
                 </div>
-                <div className="td-page__rewards-container">
-                    <NavLink to="/rewards"><button className="td-page__rewards"></button></NavLink>
-                    <p className="td-page__rewards-count">Total scored in 7 days:</p>
-                    <div className="td-page__rewards-count-container">
-                    <p className="td-page__rewards-count">90 points</p>
-                    </div>
-                </div>
             </div>
         </div>
                 {isInputVisible && <TaskInput onAddTask={onAddTask} /> }
@@ -95,9 +88,3 @@ function ToDoPage({setFinalTasks, fliterImportant, tasks, onAddTask, onOpenAddFo
 }
 
 export default ToDoPage;
-
-/*
-<div className="td-page__important-container">
-        <input className="task__check_important" type="checkbox" />
-</div>
-*/

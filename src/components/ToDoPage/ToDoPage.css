@@ -6,6 +6,9 @@
     line-height: 156px;
     margin-left: 59px;
     padding-top: 13px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .td-page__button-container {
@@ -43,7 +46,8 @@
     border: 2px solid #AD02FE;
     cursor: pointer;
 }
- 
+
+
 .td-page__important-container {
     background-color: #525BB7;
     cursor: pointer;
@@ -53,8 +57,8 @@
     justify-content: center;
     margin-top: 20px;
     align-items: center;
-    margin-right: 40px;
     border-radius: 5px;
+    margin-right: 59px;
 }
 
 .td-page__title-container {
@@ -77,49 +81,6 @@
     margin-top: 10px;
 }
 
-.td-page__button_clear:hover {
-    opacity: 0.5;
-}
-
-.td-page__rewards-container {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 59px;
-}
-
-.td-page__rewards {
-    background-image: url(../../images/trophy-4-128.png);
-    background-size: contain;
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.td-page__rewards:hover {
-    opacity: 0.5;
-}
-
-.td-page__rewards-count-container {
-    background-color: #525BB7;
-    width: auto;
-    height: auto;
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.td-page__rewards-count {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0.1em;
-    color: rgba(249, 254, 255, 0.7);
-}
 
 @media (max-width: 815px) {
     .td-page__title-container {
@@ -135,6 +96,12 @@
     .td-page__rewards-container {
         margin: 0;
     }
+
+    .td-page__important-container{
+        margin-right: 0;
+    }
+
+
 }
 
 @media (max-width: 600px) {
@@ -152,19 +119,6 @@
         line-height: 33px;
     }
 
-    .td-page__rewards {
-        width: 60px;
-        height: 60px;
-    }
-
-    .td-page__rewards-count {
-        font-size: 15px;
-    }
-
-    .td-page__important-container {
-        width: 50px;
-        height: 50px;
-    }
 }
 
 @media (max-width: 600px) {

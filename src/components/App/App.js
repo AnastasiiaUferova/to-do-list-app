@@ -7,7 +7,6 @@ import Main from '../Main/Main';
 import ToDoPage from "../ToDoPage/ToDoPage";
 import AddForm from "../AddForm/AddForm";
 import EditForm from "../EditForm/EditForm";
-import Rewards from "../Rewards/Rewards";
 import useClickOutside from "../../hooks/useClickOutside";
 
 function App() {
@@ -158,7 +157,6 @@ function updateTask(id, body) {
       fliterImportant={fliterImportant}
 
       />}></Route>
-      <Route path="/rewards" element={<Rewards/>}></Route>
       </Routes>
       <AddForm ref={addRef} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
       <EditForm task={selectedTask} ref={editRef} isOpen={isEditFormOpen} onClose={closeAllPopups} onUpdateTask={updateTask}/>
