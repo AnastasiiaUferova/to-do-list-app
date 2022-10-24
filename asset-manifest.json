@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/to-do-list-app/static/css/main.28fe7107.css",
+    "main.js": "/to-do-list-app/static/js/main.758a2351.js",
+    "static/media/Monda-Regular.ttf": "/to-do-list-app/static/media/Monda-Regular.4ee4b0422d2d6bb3bee7.ttf",
+    "static/media/Monda-Regular.woff": "/to-do-list-app/static/media/Monda-Regular.a4a1822d4eef08eba268.woff",
+    "static/media/Monda-Bald.woff": "/to-do-list-app/static/media/Monda-Bald.995d67952041a34e6da3.woff",
+    "static/media/Monda-Bald.woff2": "/to-do-list-app/static/media/Monda-Bald.93c3f7e129806af075b4.woff2",
+    "static/media/DecorImage1.svg": "/to-do-list-app/static/media/DecorImage1.966a02ada8ab3cf00896955a169f1f4c.svg",
+    "static/media/EmptyFlag-min.svg": "/to-do-list-app/static/media/EmptyFlag-min.36f7df80355b40b62fb1.svg",
+    "static/media/FilledFlag-min.svg": "/to-do-list-app/static/media/FilledFlag-min.c0a81bc4c82f0761b354.svg",
+    "static/media/Delete Task-min.svg": "/to-do-list-app/static/media/Delete Task-min.0840dba73aa20315d751.svg",
+    "static/media/EditTask-min.svg": "/to-do-list-app/static/media/EditTask-min.cd2852dfb266367d3f09.svg",
+    "static/media/send.svg": "/to-do-list-app/static/media/send.2701448f4bc9395b3fbf.svg",
+    "static/media/Check True-min.svg": "/to-do-list-app/static/media/Check True-min.43a43527ecbef34d2164.svg",
+    "index.html": "/to-do-list-app/index.html",
+    "static/media/ArrowButton-min.svg": "/to-do-list-app/static/media/ArrowButton-min.38197e964209866a8729.svg",
+    "static/media/AddButton-min.svg": "/to-do-list-app/static/media/AddButton-min.a304c356fbf059e3a118.svg",
+    "main.28fe7107.css.map": "/to-do-list-app/static/css/main.28fe7107.css.map",
+    "main.758a2351.js.map": "/to-do-list-app/static/js/main.758a2351.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28fe7107.css",
+    "static/js/main.758a2351.js"
+  ]
+}
