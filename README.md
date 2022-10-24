@@ -10,16 +10,18 @@ This project is an interactive to-do list app where users can add, delete and ed
 * Deleting tasks;
 * Adding tasks to important;
 * Editing tasks;
+* Reorder tasks by drag and drop;
 
 ## Technologies:
 
 * React.js Functional Components;
-* Hooks (useState, useEffect, useCallBack, useDebouncedCallback);
+* Hooks (useState, useEffect, useCallBack, useDebouncedCallback, custom hooks);
 * Adaptive layout using flexbox and grid positioning;
 * JavaScript;
 * Git;
 * Webpack;
-* Figma
+* Figma;
+* Framer-motion library for animation;
 
 ## Installation instructions:
 
@@ -36,4 +38,4 @@ npm run start
 ```
 ## Future development:
 
-Add importance gradation, category lists and dates. 
+Add Pomodoro timer for completing tasks.
