@@ -52,16 +52,14 @@
 }
 
 
-.task__button:nth-of-type() {
-    background-image: url(../../images/EmptyFlag-min.svg);
-}
-
 .task__button:nth-of-type(1) {
     background-image: url(../../images/EditTask-min.svg);
+    background-size: cover;
 }
 
 .task__button:nth-of-type(2) {
     background-image: url(../../images/Delete\ Task-min.svg);
+    background-size: cover;
 }
 
 
@@ -110,18 +108,18 @@
     border: none;
     place-content: center;
     cursor: pointer;
-    background-image: url(../../images/EmptyFlag-min.svg);
+    background-image: url(../../images/empty-flag-512.png);
     background-size: cover;
     display: block;
 }
 
 .task__check_important:checked {
     content: "";
-    width: 30px;
+    width: 33px;
     height: 40px;
     border: none;
     place-content: center;
-    background-image: url(../../images/FilledFlag-min.svg);
+    background-image: url(../../images/filled-flag-512.png);
 
     background-size: cover;
     display: block;
@@ -155,30 +153,30 @@
 }
 
     .task__check {
-            width: 30px;
-            height: 28px;
+        width: 30px;
+        height: 28px;
     }
 
     .task__check::before {
         width: 30px;
         height: 28px;
-        background-size: contain;
+        background-size: cover;
 }
 
     .task__button {
-        width: 22px;
-        height: 21px;
+        width: 30px;
+        height: 30px;
         background-size: contain;
     }
 
     .task__check_important {
-        width: 20px;
-        height: 21px;
+        width: 30px;
+        height: 30px;
     }
 
     .task__check_important:checked {
-        width: 18px;
-        height: 21px;
+        width: 30px;
+        height: 30px;
     }
 
 }

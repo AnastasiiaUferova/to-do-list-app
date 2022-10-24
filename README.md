@@ -39,3 +39,6 @@ npm run start
 ## Future development:
 
 Add Pomodoro timer for completing tasks.
+
+## Link to the project
+https://anastasiiauferova.github.io/to-do-list-app/
