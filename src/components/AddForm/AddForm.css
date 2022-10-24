@@ -1,0 +1,6 @@
+.popup__send-button {
+    background-image: url(../../images/send.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}

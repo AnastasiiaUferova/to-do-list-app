@@ -1,0 +1,184 @@
+.task {
+    height: 82.49px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25273C;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.task__text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task__text {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 41px;
+    letter-spacing: 0.1em;
+    color: rgba(249, 254, 255, 0.7);
+    margin-left: 20px; 
+    height: 100%;
+    word-wrap: anywhere;
+}
+
+.task__text_done {
+    text-decoration: line-through;
+    text-decoration-line: 2.5px;
+    text-decoration-style: solid;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.task__button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.task__button {
+    width: 42px;
+    height: 41px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.task__button:hover {
+    opacity: 0.5;
+}
+
+
+.task__button:nth-of-type() {
+    background-image: url(../../images/EmptyFlag-min.svg);
+}
+
+.task__button:nth-of-type(1) {
+    background-image: url(../../images/EditTask-min.svg);
+}
+
+.task__button:nth-of-type(2) {
+    background-image: url(../../images/Delete\ Task-min.svg);
+}
+
+
+.task__check {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 48px;
+    height: 44px;
+    border: 0.15em solid #BF56FF;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.task__check::before {
+    content: "";
+    width: 48px;
+    height: 44px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background:  linear-gradient(111.35deg, #E600FA 10.12%, rgba(82, 97, 234, 0) 82.22%);
+    border-radius: 50%;
+    border: none;
+    background-image: url(../../images/Check\ True-min.svg);
+}
+
+
+.task__check:checked::before {
+    transform: scale(1);
+}
+
+.task__check:hover {
+    opacity: 0.7;
+}
+
+
+.task__check_important {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 33px;
+    height: 40px;
+    border: none;
+    place-content: center;
+    cursor: pointer;
+    background-image: url(../../images/EmptyFlag-min.svg);
+    background-size: cover;
+    display: block;
+}
+
+.task__check_important:checked {
+    content: "";
+    width: 30px;
+    height: 40px;
+    border: none;
+    place-content: center;
+    background-image: url(../../images/FilledFlag-min.svg);
+
+    background-size: cover;
+    display: block;
+}
+
+
+.task__check_important:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 800px) {
+    .task__text {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .task {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 60px;
+    }
+    
+    .task__text {
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.1em;
+        color: rgba(249, 254, 255, 0.7);
+        margin-left: 20px;
+}
+
+    .task__check {
+            width: 30px;
+            height: 28px;
+    }
+
+    .task__check::before {
+        width: 30px;
+        height: 28px;
+        background-size: contain;
+}
+
+    .task__button {
+        width: 22px;
+        height: 21px;
+        background-size: contain;
+    }
+
+    .task__check_important {
+        width: 20px;
+        height: 21px;
+    }
+
+    .task__check_important:checked {
+        width: 18px;
+        height: 21px;
+    }
+
+}
