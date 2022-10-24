@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/to-do-list-app/static/css/main.28fe7107.css",
+    "main.css": "/to-do-list-app/static/css/main.f6b69546.css",
     "main.js": "/to-do-list-app/static/js/main.758a2351.js",
     "static/media/Monda-Regular.ttf": "/to-do-list-app/static/media/Monda-Regular.4ee4b0422d2d6bb3bee7.ttf",
     "static/media/Monda-Regular.woff": "/to-do-list-app/static/media/Monda-Regular.a4a1822d4eef08eba268.woff",
@@ -16,11 +16,11 @@
     "index.html": "/to-do-list-app/index.html",
     "static/media/ArrowButton-min.svg": "/to-do-list-app/static/media/ArrowButton-min.38197e964209866a8729.svg",
     "static/media/AddButton-min.svg": "/to-do-list-app/static/media/AddButton-min.a304c356fbf059e3a118.svg",
-    "main.28fe7107.css.map": "/to-do-list-app/static/css/main.28fe7107.css.map",
+    "main.f6b69546.css.map": "/to-do-list-app/static/css/main.f6b69546.css.map",
     "main.758a2351.js.map": "/to-do-list-app/static/js/main.758a2351.js.map"
   },
   "entrypoints": [
-    "static/css/main.28fe7107.css",
+    "static/css/main.f6b69546.css",
     "static/js/main.758a2351.js"
   ]
 }
