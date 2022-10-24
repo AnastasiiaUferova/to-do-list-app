@@ -2,11 +2,12 @@ import React from "react";
 import "./TaskList.css";
 import Task from "../Task/Task";
 import image from "../../images/DecorImage1.svg";
-import {Reorder} from 'framer-motion';
+import {Reorder, AnimatePresence} from 'framer-motion';
 
-function TaskList({setFinalTasks,addToImportant, tasks, checkTask, tasksLength, onDeleteTask, onOpenEditForm}) {
+function TaskList({setFinalTasks, addToImportant, tasks, checkTask, tasksLength, onDeleteTask, onOpenEditForm}) {
 
-    const TaskList = <Reorder.Group as="div" axys="y" values={tasks} onReorder={setFinalTasks} className= "task-list" > 
+    const TaskList = <Reorder.Group as="div" axys="y" values={tasks} onReorder={setFinalTasks} className= "task-list"> 
+    <AnimatePresence initial={false}>
     {tasks && tasks.map((task) => {
             return <Task onOpenEditForm={onOpenEditForm} 
             checkTask={checkTask} 
@@ -14,8 +15,8 @@ function TaskList({setFinalTasks,addToImportant, tasks, checkTask, tasksLength, 
             key={task.id} 
             task={task}
             addToImportant={addToImportant}/>
-})
-    }
+})}
+    </AnimatePresence>
     </Reorder.Group> 
     const decorImage = 
     <div className= "task-list__image-container">

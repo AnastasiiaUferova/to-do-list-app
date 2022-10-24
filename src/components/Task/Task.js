@@ -7,6 +7,19 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
     const checkedRef = useRef(null);
     const importantRef = useRef(null);
 
+
+    const variants = {
+        initial: {
+            opacity: 0,
+        },
+        animate: {
+            opacity: 1,
+        },
+        exit: { 
+            opacity: 0,
+        }
+    }
+
     const handleCheckClick = () => {
         if (checkedRef.current.checked) {
             checkTask(task.id)
@@ -38,7 +51,8 @@ function Task({task, checkTask, onDeleteTask, onOpenEditForm, addToImportant}) {
         value={task}
         whileDrag={{
             scale: 1.1
-        }}> 
+        }}
+        {...variants}> 
             <div className="task__text-container">
                 <input ref={checkedRef}  className="task__check" defaultChecked={task.checked} type="checkbox" onClick={handleCheckClick}/>
                 <span className="checkbox__slider"></span>

@@ -15,34 +15,29 @@ function App() {
     () => JSON.parse(localStorage.getItem("tasks")) || []
   );
 
-
   const [importantTasks, setImportantTasks] = useState([...tasks].filter((task) => {
     return task.important === true;
   })
   );
 
-  const [finalTasks, setFinalTasks] = useState(tasks)
-
-  
-    function fliterImportant(checked) {
-      if (checked) {
-        setFinalTasks(importantTasks)
-      }
-      else setFinalTasks(tasks);
-    }
-
+  const [finalTasks, setFinalTasks] = useState(tasks);
+  const [isAddFormOpen, setIsAddFormOpen] = useState(false);
+  const [isEditFormOpen, setIsEditFormOpen] = useState(false);
+  const [selectedTask, setSelectedTask] = useState({});
 
 useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     setFinalTasks(tasks);
     
   }, [tasks]);
+  
+function fliterImportant(checked) {
+      if (checked) {
+        setFinalTasks(importantTasks)
+      }
+      else setFinalTasks(tasks);
+    }
 
-
-
-const [isAddFormOpen, setIsAddFormOpen] = useState(false);
-const [isEditFormOpen, setIsEditFormOpen] = useState(false);
-const [selectedTask, setSelectedTask] = useState({});
 
 let tasksLength = tasks.length
 
@@ -64,12 +59,10 @@ function handleAddFormClick() {
     setIsAddFormOpen(true);
 }
 
-
 function handleEditFormClick(task) {
     setIsEditFormOpen(true);
     setSelectedTask(task); //choosing the right task to edit
 }
-
 
 function closeAllPopups() {
     setIsAddFormOpen(false);
@@ -96,8 +89,8 @@ function addToImportant(id) {
   let newImportantTasksChecked = newTasksChecked.filter((task) => {
     return task.important === true;
   });
-  setTasks(newTasksChecked);
-  setImportantTasks(newImportantTasksChecked)
+      setTasks(newTasksChecked);
+      setImportantTasks(newImportantTasksChecked)
 
 }
 
@@ -110,8 +103,8 @@ function deleteTask(selectedTask) {
   let newImportantTasks = newTasks.filter((task) => {
     return task.important === true;
   })
-  setTasks(newTasks);
-  setImportantTasks(newImportantTasks);
+      setTasks(newTasks);
+      setImportantTasks(newImportantTasks);
 
 }
 
@@ -122,18 +115,14 @@ function handleClearAll() {
 
 
 function updateTask(id, body) {
-
   const newTasksUpdate = tasks.map((task) => {
-
     if (task.id === id) {
       task.body = body;
       task.check = false;
       task.important = false;
     }
-
   return task;
   });
-
   setFinalTasks(newTasksUpdate);
   closeAllPopups()
 }
@@ -154,9 +143,8 @@ function updateTask(id, body) {
       checkTask={checkTask}
       addToImportant={addToImportant}
       onClearAll={handleClearAll}
-      fliterImportant={fliterImportant}
-
-      />}></Route>
+      fliterImportant={fliterImportant}/>}>
+      </Route>
       </Routes>
       <AddForm ref={addRef} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
       <EditForm task={selectedTask} ref={editRef} isOpen={isEditFormOpen} onClose={closeAllPopups} onUpdateTask={updateTask}/>
