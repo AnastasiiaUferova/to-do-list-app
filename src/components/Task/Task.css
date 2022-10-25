@@ -227,13 +227,20 @@
 
 @media (max-width: 416px) {
     .task__text {
-        width: 150px;
+        width: 185px;
         font-size: 15px;
     }
 }
 
 
-@media (max-width: 332px) {
+@media (max-width: 367px) {
+    .task__text {
+        width: 170px;
+    }
+}
+
+
+@media (max-width: 340px) {
     .task__text {
         width: 140px;
     }
