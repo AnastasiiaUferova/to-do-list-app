@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/to-do-list-app/static/css/main.1e20592e.css",
-    "main.js": "/to-do-list-app/static/js/main.758a2351.js",
+    "main.css": "/to-do-list-app/static/css/main.e7d6dfbf.css",
+    "main.js": "/to-do-list-app/static/js/main.8d28d8eb.js",
     "static/media/Monda-Regular.ttf": "/to-do-list-app/static/media/Monda-Regular.4ee4b0422d2d6bb3bee7.ttf",
     "static/media/Monda-Regular.woff": "/to-do-list-app/static/media/Monda-Regular.a4a1822d4eef08eba268.woff",
     "static/media/Monda-Bald.woff": "/to-do-list-app/static/media/Monda-Bald.995d67952041a34e6da3.woff",
@@ -14,11 +14,11 @@
     "index.html": "/to-do-list-app/index.html",
     "static/media/ArrowButton-min.svg": "/to-do-list-app/static/media/ArrowButton-min.38197e964209866a8729.svg",
     "static/media/AddButton-min.svg": "/to-do-list-app/static/media/AddButton-min.a304c356fbf059e3a118.svg",
-    "main.1e20592e.css.map": "/to-do-list-app/static/css/main.1e20592e.css.map",
-    "main.758a2351.js.map": "/to-do-list-app/static/js/main.758a2351.js.map"
+    "main.e7d6dfbf.css.map": "/to-do-list-app/static/css/main.e7d6dfbf.css.map",
+    "main.8d28d8eb.js.map": "/to-do-list-app/static/js/main.8d28d8eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e20592e.css",
-    "static/js/main.758a2351.js"
+    "static/css/main.e7d6dfbf.css",
+    "static/js/main.8d28d8eb.js"
   ]
 }
