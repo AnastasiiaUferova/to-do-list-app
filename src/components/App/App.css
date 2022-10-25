@@ -8,3 +8,10 @@ p, h1, h2 {
 .App {
     background-color: #181824;
 }
+
+.copyright {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}

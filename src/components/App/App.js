@@ -148,6 +148,7 @@ function updateTask(id, body) {
       </Routes>
       <AddForm ref={addRef} isOpen={isAddFormOpen} onClose={closeAllPopups} onAddTask={addTask}/>
       <EditForm task={selectedTask} ref={editRef} isOpen={isEditFormOpen} onClose={closeAllPopups} onUpdateTask={updateTask}/>
+      <p className="copyright">© Anastasiia Iuferova, 2022</p>
     </div>
   );
 }
