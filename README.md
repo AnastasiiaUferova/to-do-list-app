@@ -1,5 +1,7 @@
 # REACT.js 'TO-DO List' interactive web application 
 
+## [Check out the project on GitHub Pages](https://anastasiiauferova.github.io/to-do-list-app/)
+
 ## Description
 
 This project is an interactive to-do list app where users can add, delete and edit their tasks, sort them as important or regular ones. 
@@ -39,6 +41,3 @@ npm run start
 ## Future development:
 
 Add Pomodoro timer for completing tasks.
-
-## Link to the project
-https://anastasiiauferova.github.io/to-do-list-app/
